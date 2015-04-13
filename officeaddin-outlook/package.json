@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "init": "npm install",
-    "install": "bower install; tsd reinstall"
+    "install": "bower install; tsd reinstall --save"
   },
   "author": {
     "name": "Andrew Connell",
