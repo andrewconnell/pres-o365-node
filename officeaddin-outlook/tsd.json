@@ -1,0 +1,36 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "tools/typings",
+  "bundle": "tools/typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "express/express.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "handlebars/handlebars.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "q/Q.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "528debd5fd8c31d60385fb0f9e88dca54136b47b"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "528debd5fd8c31d60385fb0f9e88dca54136b47b"
+    },
+    "request/request.d.ts": {
+      "commit": "b0056383b51495b373a32b791de8112fcafe2ace"
+    },
+    "form-data/form-data.d.ts": {
+      "commit": "b0056383b51495b373a32b791de8112fcafe2ace"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "b0056383b51495b373a32b791de8112fcafe2ace"
+    }
+  }
+}
