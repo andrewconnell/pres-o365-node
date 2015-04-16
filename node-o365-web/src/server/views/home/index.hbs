@@ -1,0 +1,10 @@
+{{#if isAuthenticated}}
+  <strong>Hello {{user.name}}</strong> ({{user.id}})<strong>!</strong>
+{{/if}}
+
+<h2>Navigation</h2>
+<ul>
+  <li><a href="/">home</a></li>
+  <li>{{#if isAuthenticated}}<a href="/logout">logout</a>{{else}}<a href="/login">login</a>{{/if}}</li>
+  <li><a href="/discovery">(login) discovery</a></li>
+</ul>

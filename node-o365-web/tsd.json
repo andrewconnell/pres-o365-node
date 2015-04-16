@@ -1,0 +1,36 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "tools/typings",
+  "bundle": "tools/typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "express/express.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "handlebars/handlebars.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "q/Q.d.ts": {
+      "commit": "4c9851e6e8ab0c7e035758c1b04b4357995ff957"
+    },
+    "request/request.d.ts": {
+      "commit": "b0056383b51495b373a32b791de8112fcafe2ace"
+    },
+    "form-data/form-data.d.ts": {
+      "commit": "b0056383b51495b373a32b791de8112fcafe2ace"
+    },
+    "nconf/nconf.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "node-uuid/node-uuid.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    }
+  }
+}

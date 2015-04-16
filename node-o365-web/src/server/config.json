@@ -1,0 +1,13 @@
+{
+  "aad-tenant-id": "cc49913f-171f-48d5-bcc9-db3967acfbed",
+  "aad-client-id": "9b275ab9-27c8-470a-a5e1-7ca8e554917c",
+  "aad-client-secret": "0g2qARyeDUvC7IkWWrHFBRA+xjXclwNsOGQM4hrMp10=",
+  "aad-authority": "https://login.microsoftonline.com/",
+  "aad-graph-api-resource": "https://graph.windows.net",
+  "o365-discovery-endpoint": "https://api.office.com/discovery/v1.0/me/",
+  "o365-discovery-resource": "https://api.office.com/discovery/",
+  "redirect-endpoint": "http://localhost:3000/auth",
+  "post-logout-redirect-uri": "http://localhost:3000/",
+  "aad-authorization-endpoint-template": "https://login.microsoftonline.com/{{tenantid}}/oauth2/authorize?client_id={{clientid}}&redirect_uri={{redirecturi}}&state={{state}}&response_type=code",
+  "aad-logout-endpoint-template": "https://login.microsoftonline.com/{{tenantid}}/oauth2/logout?post_logout_redirect_uri={{postLogoutRedirectUri}}"
+}

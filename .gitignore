@@ -10,8 +10,6 @@
 
 # TypeScript type definitions
 **/tools/typings/*/*.d.ts
-# except include these added by hand
-!**/tools/typings/office/office.d.ts
 
 # generated files
 **/src/**/*.js

@@ -1,0 +1,15 @@
+{{#if isAuthenticated}}
+  <strong>Hello {{user.name}}</strong> ({{user.id}})<strong>!</strong> - <a href="/logout">not you?</a>
+{{/if}}
+
+<div>
+  <a href="/">home</a> &raquo; discovery
+</div>
+
+<h2>Office 365 Discovery Service</h2>
+Welcome to the Office 365 Discovery Service demo. View all available services or just those you have access to using the links below.
+
+<ul>
+  <li><a href="/discovery/allservices">view all services</a></li>
+  <li><a href="/discovery/myservices">view my services</a></li>
+</ul>
