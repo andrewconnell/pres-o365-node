@@ -79,9 +79,9 @@ class AzureAD {
     // todo - see if existing entry for resource (if so, update that)
 
     var entry:IResourceCredentials = {
-      resourceId: resourceId,
-      accessToken: accessToken,
-      expiration: expiration,
+      resourceId  : resourceId,
+      accessToken : accessToken,
+      expiration  : expiration,
       refreshToken: refreshToken
     };
     resource.push(entry);
@@ -116,6 +116,34 @@ class AzureAD {
     }
 
     return resourceCredential;
+  }
+
+  /**
+   * @description
+   *  Retrieves access token for specified service using the
+   *
+   * @param request {express.Request} HTTP request object.
+   * @param tokenKey  {string}  ID of the token to extract from the session.
+   * @returns {string}  OAuth bearer token (or null value if not found).
+   */
+  public static getAccessToken(request:express.Request, tokenKey:string):string {
+    var azureAD = new AzureAD(request);
+
+    // try to get access token from discovery service
+    var cred = azureAD.getCredsFromSession(tokenKey);
+
+    // does access token exist?
+    if (!cred) {
+      console.log('... no cred found in session cache for ' + tokenKey);
+      return null;
+    } else {
+      console.log('... cred found in session cache for ' + tokenKey);
+
+      // todo - add check if credential has already expired (or will in next 5m)
+      //  if so, return 'EXPIRED', use refresh token to get a new token
+
+      return cred.accessToken;
+    }
   }
 
 }

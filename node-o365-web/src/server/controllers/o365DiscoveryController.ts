@@ -5,7 +5,7 @@ import express = require('express');
 import request = require('request');
 import config = require('nconf');
 import User = require('../models/user');
-import DiscoveryServiceHelper = require('../auth/o365Discovery');
+import AzureAD = require('../auth/azureAD');
 import Q = require('q');
 
 interface IO365DiscoveryServiceResult {
@@ -18,11 +18,33 @@ interface IO365DiscoveryServiceResult {
 class DiscoveryController {
 
   constructor(private app:express.Application) {
-    // init the config
+    this.loadRoutes();
+  }
+
+  /**
+   * @description
+   *  Retrieves the resource ID for the current service from the config settings.
+   *
+   * @returns {string}  Office 365 discovery service's resource Id.
+   */
+  static getServiceResourceId():string {
+    config.env()
+          .file({file: 'src/server/config.json'});
+
+    return config.get('o365-discovery-resource');
+  }
+
+  /**
+   * @description
+   *  Retrieves the endpoint for the current service from the config settings.
+   *
+   * @returns {string}  Office 365 discovery service's endpoint.
+   */
+  static getServiceEndpoint():string {
     config.env()
       .file({file: 'src/server/config.json'});
 
-    this.loadRoutes();
+    return config.get('o365-discovery-endpoint');
   }
 
   /**
@@ -36,6 +58,13 @@ class DiscoveryController {
     this.app.get('/discovery/myservices', this.handleMyServicesGet);
   }
 
+  /**
+   * @description
+   *  Handler for HTTP GET requests to /discovery/
+   *
+   * @param request {express.Request} HTTP request object.
+   * @param response {express.Response} HTTP response object.
+   */
   private handleRootGet(request:express.Request, response:express.Response) {
     var user = new User(request);
 
@@ -56,6 +85,13 @@ class DiscoveryController {
     response.render('discovery/index', vm);
   }
 
+  /**
+   * @description
+   *  Handler for HTTP GET requests to /discovery/allservices
+   *
+   * @param expRequest {express.Request} HTTP request object.
+   * @param expResponse {express.Response} HTTP response object.
+   */
   private handleAllServicesGet(expRequest:express.Request, expResponse:express.Response) {
     var user = new User(expRequest);
 
@@ -76,7 +112,7 @@ class DiscoveryController {
     vm.capabilities    = [];
 
     // build up http request to get data from discovery service
-    var endpoint = config.get('o365-discovery-endpoint') + 'allservices?'
+    var endpoint = DiscoveryController.getServiceEndpoint() + 'allservices?'
       + '$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
     var options:request.Options = {
       url    : endpoint,
@@ -103,6 +139,13 @@ class DiscoveryController {
 
   }
 
+  /**
+   * @description
+   *  Handler for HTTP GET requests to /discovery/myservices
+   *
+   * @param expRequest {express.Request} HTTP request object.
+   * @param expResponse {express.Response} HTTP response object.
+   */
   private handleMyServicesGet(expRequest:express.Request, expResponse:express.Response) {
     var user = new User(expRequest);
 
@@ -112,8 +155,8 @@ class DiscoveryController {
       expResponse.redirect('/login?redir=/discovery');
     }
 
-    var discoHelper = new DiscoveryServiceHelper(expRequest);
-    var accessToken = discoHelper.getAccessToken();
+    // get access token for discovery service
+    var accessToken = AzureAD.getAccessToken(expRequest, DiscoveryController.getServiceResourceId());
 
     // if no token returned, go get one & come back
     if (!accessToken) {
@@ -121,7 +164,7 @@ class DiscoveryController {
         + 'redir='
         + encodeURIComponent(expRequest.route.path)
         + '&resourceId='
-        + encodeURIComponent(config.get('o365-discovery-resource'))
+        + encodeURIComponent(DiscoveryController.getServiceResourceId())
       );
     } else if (accessToken === 'EXPIRED') {
       // if what was returned is expired...
@@ -141,7 +184,7 @@ class DiscoveryController {
       vm.capabilities    = [];
 
       // build up http request to get data from discovery service
-      var endpoint = config.get('o365-discovery-endpoint') + 'services?'
+      var endpoint = DiscoveryController.getServiceEndpoint() + 'services?'
         + '$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
       var options:request.Options = {
         url    : endpoint,
