@@ -21,14 +21,16 @@ class O365Discovery {
 
     // does access token exist?
     if (!cred) {
-      console.log('debug... no credential found in session cache');
+      console.log('... no discovery service cred found in session cache');
       return null;
+    } else {
+      console.log('... discovery service cred found in session cache');
+
+      // todo - add check if credential has already expired (or will in next 5m)
+      //  if so, return 'EXPIRED', use refresh token to get a new token
+
+      return cred.accessToken;
     }
-
-    // todo - add check if credential has already expired (or will in next 5m)
-    //  if so, return 'EXPIRED', use refresh token to get a new token
-
-    return cred.accessToken;
   }
 
   /* =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+= */

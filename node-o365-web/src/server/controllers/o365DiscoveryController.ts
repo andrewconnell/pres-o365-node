@@ -48,8 +48,8 @@ class DiscoveryController {
     // get current user details
     var vm:any = {};
     vm.isAuthenticated = user.isAuthenticated();
-    vm.user = {
-      id: user.userId(),
+    vm.user            = {
+      id  : user.userId(),
       name: user.fullName()
     };
 
@@ -67,20 +67,20 @@ class DiscoveryController {
 
     // get current user details
     var vm:any = {};
-    vm.title = 'All Services';
+    vm.title           = 'All Services';
     vm.isAuthenticated = user.isAuthenticated();
-    vm.user = {
-      id: user.userId(),
+    vm.user            = {
+      id  : user.userId(),
       name: user.fullName()
     };
-    vm.capabilities = [];
+    vm.capabilities    = [];
 
     // build up http request to get data from discovery service
     var endpoint = config.get('o365-discovery-endpoint') + 'allservices?'
       + '$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
     var options:request.Options = {
-      url: endpoint,
-      method: 'GET',
+      url    : endpoint,
+      method : 'GET',
       headers: {
         Accept: 'application/json'
       }
@@ -92,8 +92,8 @@ class DiscoveryController {
       data.value.forEach((element:IO365DiscoveryServiceResult) => {
         vm.capabilities.push({
           capability: element.capability,
-          name: element.serviceName,
-          endpoint: '-',
+          name      : element.serviceName,
+          endpoint  : '-',
           resourceId: '-'
         });
       });
@@ -128,44 +128,44 @@ class DiscoveryController {
       //  need to get a new one using refresh token
       //var refreshToken = discoHelper.getRefreshToken();
       // todo - create redirect & handler to use existing refresh token to get new token
-    }
+    } else {
 
-    // get current user details
-    var vm:any = {};
-    vm.title = 'My Services';
-    vm.isAuthenticated = user.isAuthenticated();
-    vm.user = {
-      id: user.userId(),
-      name: user.fullName()
-    };
-    vm.capabilities = [];
+      // get current user details
+      var vm:any = {};
+      vm.title           = 'My Services';
+      vm.isAuthenticated = user.isAuthenticated();
+      vm.user            = {
+        id  : user.userId(),
+        name: user.fullName()
+      };
+      vm.capabilities    = [];
 
-    // build up http request to get data from discovery service
-    var endpoint = config.get('o365-discovery-endpoint') + 'services?'
-      + '$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
-    var options:request.Options = {
-      url: endpoint,
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Bearer ' + accessToken
-      }
-    };
+      // build up http request to get data from discovery service
+      var endpoint = config.get('o365-discovery-endpoint') + 'services?'
+        + '$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
+      var options:request.Options = {
+        url    : endpoint,
+        method : 'GET',
+        headers: {
+          Accept       : 'application/json',
+          Authorization: 'Bearer ' + accessToken
+        }
+      };
 
-    request(endpoint, options, function(error, response, body) {
-      var data = JSON.parse(body);
-      data.value.forEach((element:IO365DiscoveryServiceResult) => {
-        vm.capabilities.push({
-          capability: element.capability,
-          name: element.serviceName,
-          endpoint: element.serviceEndpointUri,
-          resourceId: element.serviceResourceId
+      request(endpoint, options, function(error, response, body) {
+        var data = JSON.parse(body);
+        data.value.forEach((element:IO365DiscoveryServiceResult) => {
+          vm.capabilities.push({
+            capability: element.capability,
+            name      : element.serviceName,
+            endpoint  : element.serviceEndpointUri,
+            resourceId: element.serviceResourceId
+          });
         });
+
+        expResponse.render('discovery/list', vm);
       });
-
-      expResponse.render('discovery/list', vm);
-    });
-
+    }
   }
 
 }
