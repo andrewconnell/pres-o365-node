@@ -49,5 +49,5 @@ http.createServer(app)
     .listen(httpServerPort);
 
 console.log('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+');
-console.log('Web Server listening at https://localhost:%s', httpServerPort);
+console.log('Web Server listening at http://[local-ip]:%s', httpServerPort);
 console.log('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+');
