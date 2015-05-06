@@ -31,6 +31,9 @@
     },
     "express-session/express-session.d.ts": {
       "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "passport/passport.d.ts": {
+      "commit": "f3244190e20af6901e865f4cc58127d19216baa1"
     }
   }
 }
