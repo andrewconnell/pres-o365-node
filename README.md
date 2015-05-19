@@ -11,12 +11,16 @@ Presentations
 
 - **[Building Office Add-ins using Node.js](pres-officeaddins-nodejs.md)**
 
-	Andrew Connell will show you how to build a web application using Node.JS. This session will walk you through the steps to get started with Node.JS and the plumbing needed for Apps for Office. They will show how to build Apps for Office in both Outlook and Excel that talk to the Office.JS. End to end solutions will be used to show the power of the App Model for the End Users who never have to leave the product they live and breathe in to surface more business context than ever before.
+	Andrew Connell will show you how to build a web application using Node.JS. This session will walk you through the steps to get started with Node.JS and the plumbing needed for Add-ins for Office. They will show how to build Add-ins for Office in both Outlook and Excel that talk to the Office.JS. End to end solutions will be used to show the power of the Add-ins Model for the End Users who never have to leave the product they live and breathe in to surface more business context than ever before.
 
 - **[Building Business Apps Like they do in the Valley with Angular, Node.js and more](pres-node-angular-valley.md)**
 
 	This session is a deep dive journey into using third party Angular, Node.js, or any other third-party library to create apps.
 
+- **[Building Apps for Office & Office 365 using Node.js](pres-office-apps-nodejs.md)**
+
+	Are you an Office, Office 365 or even a SharePoint developer and interested in this thing called Node.js? This session will walk you through the steps to get started with Node.js and the plumbing needed for Add-ins for Office. In addition you will see how to create a web application that authenticates with Azure AD and talks to the Office 365 APIs all using Node.js!
+	
 Demos
 -----
 - **[officeaddin-outlook - Office Add-in for Outlook using Node.js & Angular](officeaddin-outlook)**
