@@ -20,6 +20,11 @@ Presentations
 - **[Building Apps for Office & Office 365 using Node.js](pres-office-apps-nodejs.md)**
 
 	Are you an Office, Office 365 or even a SharePoint developer and interested in this thing called Node.js? This session will walk you through the steps to get started with Node.js and the plumbing needed for Add-ins for Office. In addition you will see how to create a web application that authenticates with Azure AD and talks to the Office 365 APIs all using Node.js!
+
+- **[Introduction to Node.js for the SharePoint & Office 365 Developer
+Abstract](pres-nodeintro-o365sp-dev.md)**
+
+  Have you heard about this thing called Node.js. They actually got JavaScript to run on the server? Are you kidding me!? Nope... and there are some very good reasons why you should consider it for your next SharePoint or Office 365 app project. In this class, you will learn what Node.js is, how to create a simple site and walk away with some resources on where to go from there.
 	
 Demos
 -----
