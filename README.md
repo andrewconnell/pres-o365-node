@@ -19,7 +19,7 @@ Presentations
 
 - **[Introduction to Node.js for the SharePoint & Office 365 Developer](pres-nodeintro-o365sp-dev.md)**
 	
-	Have you heard about this thing called NodeJS? They actually got JavaScript to run on the server? Are you kidding me!? Nope... and there are some very good reasons why you should consider it for your next SharePoint or Office 365 app project. In this class, you will learn what NodeJS is, how to create a simple site and walk away with some resources on
+	Have you heard about this thing called Node.js? They actually got JavaScript to run on the server? Are you kidding me!? Nope... and there are some very good reasons why you should consider it for your next SharePoint or Office 365 app project. In this class, you will learn what Node.js is, how to create a simple site and walk away with some resources on where to go from there.
 
 Demos
 -----
