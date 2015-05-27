@@ -1,0 +1,17 @@
+{
+  "name": "node-web-101",
+  "description": "My first Node.js website.",
+  "version": "0.1.0",
+  "authors": [
+    "Andrew Connell <http://www.andrewconnell.com>"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
