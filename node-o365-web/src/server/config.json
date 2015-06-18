@@ -1,7 +1,7 @@
 {
-  "aad-tenant-id": "4f67d3e0-6d7a-477b-8615-19d739feb4ee",
-  "aad-client-id": "9bd06c0a-ec16-4ea5-8081-34b5d90e4444",
-  "aad-client-secret": "h1mlHkqwrVUyKtouoDVI0/AgXifVylFuDCdrYsiMnlw=",
+  "aad-tenant-id": "9b895ea0-266a-42e2-a811-63fa3f00b0ea",
+  "aad-client-id": "00c96a08-12c5-4af9-bfba-fdbf7700eed9",
+  "aad-client-secret": "IIVe06bckg2BiO6tnwGrrYCDabpgOPNvLLljmnszJIc=",
   "aad-authority": "https://login.microsoftonline.com/",
   "aad-graph-api-resource": "https://graph.windows.net",
   "o365-discovery-endpoint": "https://api.office.com/discovery/v1.0/me/",
