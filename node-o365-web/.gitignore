@@ -1,2 +1,6 @@
 # express sessions
 **/sessions
+
+# generated files
+**/src/**/*.js
+**/src/**/*.js.map

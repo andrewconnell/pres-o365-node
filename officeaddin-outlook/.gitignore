@@ -1,3 +1,6 @@
 # overrule ignore from parent folder & include workaround
 #   for missing office.js type definition
 !tools/typings/office/office.d.ts
+# generated files
+**/src/**/*.js
+**/src/**/*.js.map

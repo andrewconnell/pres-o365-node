@@ -2,7 +2,7 @@
   "name": "node-web-101",
   "description": "My first Node.js website.",
   "version": "0.1.0",
-  "main": "server.js",
+  "main": "src/server/server.js",
   "scripts": {
     "init": "npm install",
     "install": "bower install"

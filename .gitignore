@@ -10,7 +10,3 @@
 
 # TypeScript type definitions
 **/tools/typings/*/*.d.ts
-
-# generated files
-**/src/**/*.js
-**/src/**/*.js.map
