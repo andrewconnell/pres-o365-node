@@ -1,6 +1,6 @@
 Node.js Website with AzureAD & Office 365 Integration
 =================================================
-This sample demonstrates how to create a website using [Node.js](http://www.nodejs.org) that authenticates with AzureAD & Office 365 using REST APIs. In this sample the website is bare-bones... implemented as an MVC style site using [Handlebars](https://github.com/donpark/hbs) as the view engine. All JavaScript in this sample is written using [TypeScript](http://typescriptlang.org). 
+This sample demonstrates how to create a website using [Node.js](http://www.nodejs.org) that authenticates with AzureAD & Office 365 using REST APIs. In this sample the website is bare-bones... implemented as an MVC style site using [Handlebars](https://github.com/donpark/hbs) as the view engine. All JavaScript in this sample is written using [TypeScript](http://typescriptlang.org).
 
 The Scenario - End User
 -----------------------
@@ -45,7 +45,7 @@ This will (1) download all NPM packages referenced in the project, (2) download 
 Compile the TypeScript, used in Node.js application, by running the following command from within the root of the application:
 
 ````
-gulp compile-ts
+gulp compile-server-ts
 ````
 
 You can remove all compiled JavaScript and source maps by running the following:
@@ -57,12 +57,12 @@ gulp clean-ts
 When developing you can run the following. This will monitor any changes to TypeScript and handlebars files (used as the MVC view engine in the Node.js application). If any changes are detected it will automatically do the following things:
 
 - **lint all TypeScript** (gulp task **lint**): This will check all TypeScript to ensure it meets the coding style rules defined in the [tslint.json](tslint.json) file.
-- **update TypeScript references** (gulp task **gen-server-tsrefs**): There are three files referenced at the top of every TypeScript file. The first, **/tools/typings/tsd.d.ts**, contains references to all TypeScript type definition files obtained using the tool [tsd.exe](http://definitelytyped.org/tsd). The other other file that's referenced is **/tools/typings/server.d.ts**... it references the TypeScript files used within the application. This saves the developer from adding all these references to each and every file in the project. 
+- **update TypeScript references** (gulp task **gen-server-tsrefs**): There are three files referenced at the top of every TypeScript file. The first, **/tools/typings/tsd.d.ts**, contains references to all TypeScript type definition files obtained using the tool [tsd.exe](http://definitelytyped.org/tsd). The other other file that's referenced is **/tools/typings/server.d.ts**... it references the TypeScript files used within the application. This saves the developer from adding all these references to each and every file in the project.
 - **comile all TypeScript** (gulp task **compile-server-ts**): This compiles all the TypeScript to JavaScript.
 
 Running the Application
 -----------------------
-The application, as it stands in the GitHub repo, is configured to run locally. 
+The application, as it stands in the GitHub repo, is configured to run locally.
 
 Developing with WebStorm
 ------------------------
@@ -84,7 +84,7 @@ node-inspector
 ````
 
 Then run the following gulp task that will do the same watching, linting & recompilation that I mentioned above, except it will also automatically restart the Node.js process to get the latest code changes:
- 
+
 ````
 gulp watch-nodemon
 ````
